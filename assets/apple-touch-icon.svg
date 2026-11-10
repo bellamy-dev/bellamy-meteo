@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0e4167"/>
+      <stop offset=".55" stop-color="#0a2742"/>
+      <stop offset="1" stop-color="#061423"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="82" y1="48" x2="124" y2="98" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffeec0"/>
+      <stop offset="1" stop-color="#ffc768"/>
+    </linearGradient>
+    <linearGradient id="cloud" x1="48" y1="92" x2="128" y2="136" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".97"/>
+      <stop offset="1" stop-color="#d8edff" stop-opacity=".84"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" fill="url(#bg)"/>
+  <circle cx="112" cy="70" r="27" fill="url(#sun)"/>
+  <g stroke="#ffda8e" stroke-width="5.5" stroke-linecap="round" opacity=".92">
+    <path d="M112 27v9M144 39l-6.4 6.4M155 70h-9M33 70h-9M144 101l-6.4-6.4M80 39l-6.4-6.4"/>
+  </g>
+  <path d="M52 128h67a19.5 19.5 0 0 0 2.2-38.7A30.6 30.6 0 0 0 63.8 80 22.7 22.7 0 0 0 52 128Z" fill="url(#cloud)"/>
+</svg>

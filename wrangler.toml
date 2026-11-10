@@ -1,0 +1,8 @@
+name = "bellamy-meteo"
+compatibility_date = "2026-01-01"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bellamy-meteo"
+database_id = "c8f3b824-b3aa-4d9d-959b-b43500ac7975"

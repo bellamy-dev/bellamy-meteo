@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Bellamy Météo — La météo, en douceur</title>
+    <meta
+      name="description"
+      content="Une météo claire et vivante : conditions actuelles, 24 prochaines heures et prévisions à 7 jours. Paris, Tokyo et toutes vos villes favorites."
+    />
+    <meta name="theme-color" content="#0b3357" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="application-name" content="Bellamy Météo" />
+
+    <link rel="canonical" href="https://bellamy-meteo.bellamy.stream/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Bellamy Météo" />
+    <meta property="og:title" content="Bellamy Météo — La météo, en douceur" />
+    <meta
+      property="og:description"
+      content="Conditions actuelles, 24 prochaines heures et prévisions à 7 jours, dans une interface calme et animée."
+    />
+    <meta property="og:url" content="https://bellamy-meteo.bellamy.stream/" />
+    <meta property="og:image" content="https://bellamy-meteo.bellamy.stream/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bellamy Météo, la météo en douceur" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bellamy Météo — La météo, en douceur" />
+    <meta
+      name="twitter:description"
+      content="Conditions actuelles, 24 prochaines heures et prévisions à 7 jours, dans une interface calme et animée."
+    />
+    <meta name="twitter:image" content="https://bellamy-meteo.bellamy.stream/og-image.png" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body data-scene="clear" data-phase="day" data-intensity="normal">
+    <a class="skip-link" href="#content">Aller à la météo</a>
+
+    <div class="scene" aria-hidden="true">
+      <div class="sky sky__base" data-sky="clear-day"></div>
+      <div class="sky sky__fade" data-sky="clear-day"></div>
+      <div class="horizon"></div>
+      <canvas class="stars-canvas"></canvas>
+      <div class="celestial sun"></div>
+      <div class="celestial moon"></div>
+
+      <div class="clouds">
+        <div class="cloud cloud--1"><span></span><span></span><span></span><span></span></div>
+        <div class="cloud cloud--2"><span></span><span></span><span></span><span></span></div>
+        <div class="cloud cloud--3"><span></span><span></span><span></span><span></span></div>
+        <div class="cloud cloud--4"><span></span><span></span><span></span><span></span></div>
+        <div class="cloud cloud--5"><span></span><span></span><span></span><span></span></div>
+      </div>
+
+      <canvas class="precip-canvas"></canvas>
+
+      <div class="fog">
+        <span class="fog__layer fog__layer--1"></span>
+        <span class="fog__layer fog__layer--2"></span>
+        <span class="fog__layer fog__layer--3"></span>
+      </div>
+
+      <div class="lightning-flash"></div>
+      <div class="lightning-bolt">
+        <svg viewBox="0 0 64 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M38 2 8 56h22l-8 42 38-60H38l8-36Z" fill="#fff8dc" />
+        </svg>
+      </div>
+
+      <div class="scene__vignette"></div>
+      <div class="scene__grain"></div>
+    </div>
+
+    <div class="app">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Bellamy Météo, accueil">
+          <svg class="brand__mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="brand-sun" x1="16" y1="8" x2="29" y2="24" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFE9AC" />
+                <stop offset="1" stop-color="#FFC768" />
+              </linearGradient>
+            </defs>
+            <circle cx="24.5" cy="15" r="7.4" fill="url(#brand-sun)" />
+            <g stroke="#FFDA8E" stroke-width="1.7" stroke-linecap="round">
+              <path d="M24.5 2.2v3.1M34.8 5.5l-2.2 2.2M37.3 15h-3.1M11.5 15H8.3M33.5 22.9l-2.2-2.1M15.5 7.9l-2.2-2.1" />
+            </g>
+            <path
+              d="M9.5 29.5h16.3a6.2 6.2 0 0 0 .6-12.4 9.7 9.7 0 0 0-18.2-2.4 7.2 7.2 0 0 0 1.3 14.8Z"
+              fill="rgba(255,255,255,.16)"
+              stroke="rgba(255,255,255,.94)"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span class="brand__text"><strong>Bellamy</strong><span>Météo</span></span>
+        </a>
+
+        <div class="search" id="search">
+          <form class="search__form" id="search-form" role="search" autocomplete="off">
+            <svg class="search__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.6" stroke="currentColor" stroke-width="1.8" />
+              <path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+            <label class="visually-hidden" for="search-input">Rechercher une ville</label>
+            <input
+              id="search-input"
+              class="search__input"
+              type="search"
+              placeholder="Rechercher une ville…"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              enterkeyhint="search"
+              aria-autocomplete="list"
+              aria-controls="search-results"
+              aria-expanded="false"
+            />
+            <button
+              class="search__action search__locate"
+              id="locate-button"
+              type="button"
+              aria-label="Utiliser ma position"
+              title="Utiliser ma position"
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <g stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                  <circle cx="12" cy="12" r="6.2" />
+                  <circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none" />
+                  <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3" />
+                </g>
+              </svg>
+            </button>
+            <button
+              class="search__action search__clear"
+              id="search-clear"
+              type="button"
+              aria-label="Effacer la recherche"
+              hidden
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="m7 7 10 10M17 7 7 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </button>
+          </form>
+
+          <div class="search__panel" id="search-panel" hidden>
+            <div class="search__results" id="search-results" role="listbox" aria-label="Suggestions de villes"></div>
+            <p class="search__status" id="search-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="units" role="group" aria-label="Unités de mesure">
+          <button class="units__button is-active" type="button" data-units="metric" aria-pressed="true">
+            <span>°C</span><small>km/h</small>
+          </button>
+          <button class="units__button" type="button" data-units="imperial" aria-pressed="false">
+            <span>°F</span><small>mph</small>
+          </button>
+        </div>
+      </header>
+
+      <div class="offline-banner" id="offline-banner" hidden>
+        <span class="offline-banner__dot"></span>
+        <span>Vous êtes hors ligne. La météo se mettra à jour au retour de la connexion.</span>
+      </div>
+
+      <main class="content" id="content" aria-busy="true">
+        <span class="visually-hidden">Chargement de la météo…</span>
+
+        <section class="hero hero--skeleton" aria-hidden="true">
+          <div class="sk sk--eyebrow"></div>
+          <div class="sk sk--city"></div>
+          <div class="sk sk--condition"></div>
+          <div class="sk sk--temperature"></div>
+          <div class="sk sk--meta"></div>
+          <div class="favorites favorites--skeleton">
+            <span class="sk sk--chip"></span>
+            <span class="sk sk--chip sk--chip-short"></span>
+            <span class="sk sk--chip"></span>
+          </div>
+        </section>
+
+        <section class="stats" aria-hidden="true">
+          <article class="stat-card stat-card--skeleton">
+            <div class="sk sk--label"></div>
+            <div class="sk sk--value"></div>
+            <div class="sk sk--sub"></div>
+          </article>
+          <article class="stat-card stat-card--skeleton">
+            <div class="sk sk--label"></div>
+            <div class="sk sk--value"></div>
+            <div class="sk sk--sub"></div>
+          </article>
+          <article class="stat-card stat-card--skeleton">
+            <div class="sk sk--label"></div>
+            <div class="sk sk--value"></div>
+            <div class="sk sk--sub"></div>
+          </article>
+          <article class="stat-card stat-card--skeleton">
+            <div class="sk sk--label"></div>
+            <div class="sk sk--value"></div>
+            <div class="sk sk--sub"></div>
+          </article>
+          <article class="stat-card stat-card--skeleton">
+            <div class="sk sk--label"></div>
+            <div class="sk sk--value"></div>
+            <div class="sk sk--sub"></div>
+          </article>
+          <article class="stat-card stat-card--skeleton">
+            <div class="sk sk--label"></div>
+            <div class="sk sk--value"></div>
+            <div class="sk sk--sub"></div>
+          </article>
+        </section>
+
+        <section class="panel" aria-hidden="true">
+          <div class="panel__head">
+            <div class="sk sk--heading"></div>
+            <div class="sk sk--hint"></div>
+          </div>
+          <div class="hourly-skeleton">
+            <span class="hour-skeleton"></span>
+            <span class="hour-skeleton"></span>
+            <span class="hour-skeleton"></span>
+            <span class="hour-skeleton"></span>
+            <span class="hour-skeleton"></span>
+            <span class="hour-skeleton"></span>
+            <span class="hour-skeleton"></span>
+            <span class="hour-skeleton"></span>
+          </div>
+        </section>
+
+        <section class="panel" aria-hidden="true">
+          <div class="panel__head">
+            <div class="sk sk--heading"></div>
+            <div class="sk sk--hint"></div>
+          </div>
+          <div class="daily-skeleton">
+            <div class="day-skeleton"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div>
+            <div class="day-skeleton"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div>
+            <div class="day-skeleton"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div>
+            <div class="day-skeleton"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div>
+            <div class="day-skeleton"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div>
+            <div class="day-skeleton"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div>
+            <div class="day-skeleton"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div>
+          </div>
+        </section>
+      </main>
+
+      <p class="visually-hidden" id="app-status" aria-live="polite"></p>
+
+      <footer class="footer">
+        <p>Données <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a> · Bellamy Météo</p>
+        <p class="footer__updated" id="footer-updated"></p>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <noscript>
+      <div class="noscript">Bellamy Météo a besoin de JavaScript pour afficher les prévisions.</div>
+    </noscript>
+  </body>
+</html>

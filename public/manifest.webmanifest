@@ -1,0 +1,28 @@
+{
+  "name": "Bellamy Météo",
+  "short_name": "Bellamy Météo",
+  "description": "La météo, en douceur : conditions actuelles, 24 prochaines heures et prévisions à 7 jours.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#08111f",
+  "theme_color": "#0b3357",
+  "categories": ["weather", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0d3a5c"/>
+      <stop offset="1" stop-color="#071727"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="26" y1="15" x2="45" y2="38" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffe9ac"/>
+      <stop offset="1" stop-color="#ffc768"/>
+    </linearGradient>
+    <linearGradient id="cloud" x1="15" y1="32" x2="46" y2="49" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#dcefff" stop-opacity=".8"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <circle cx="40" cy="25" r="10" fill="url(#sun)"/>
+  <g stroke="#ffda8e" stroke-width="2.2" stroke-linecap="round" opacity=".9">
+    <path d="M40 9.5v3.4M52.6 13.5l-2.4 2.4M56 25h-3.4M13 25h-3.4M50.3 35l-2.4-2.4M29.7 14.8l-2.4-2.4"/>
+  </g>
+  <path d="M17.8 44.5h24.7a7.2 7.2 0 0 0 .8-14.3A11.3 11.3 0 0 0 22.1 27a8.4 8.4 0 0 0-4.3 17.5Z" fill="url(#cloud)" opacity=".96"/>
+</svg>

@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#04101d"/>
+      <stop offset=".38" stop-color="#0a3453"/>
+      <stop offset=".72" stop-color="#15617f"/>
+      <stop offset="1" stop-color="#081b2c"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0" cy="0" r="1" gradientTransform="translate(952 150) rotate(90) scale(300)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffe4a4" stop-opacity=".46"/>
+      <stop offset=".45" stop-color="#ffd07a" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#ffd07a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card" x1="700" y1="150" x2="1100" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".19"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".065"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0" cy="0" r="1" gradientTransform="translate(1058 146) rotate(90) scale(52)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffdf4"/>
+      <stop offset=".42" stop-color="#ffe5a4"/>
+      <stop offset=".76" stop-color="#ffc768" stop-opacity=".48"/>
+      <stop offset="1" stop-color="#ffc768" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cloud" x1="770" y1="315" x2="1060" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#d9ecff" stop-opacity=".6"/>
+    </linearGradient>
+    <linearGradient id="brandSun" x1="42" y1="30" x2="75" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffe9ac"/>
+      <stop offset="1" stop-color="#ffc768"/>
+    </linearGradient>
+    <linearGradient id="line" x1="80" y1="0" x2="1120" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".28"/>
+      <stop offset=".6" stop-color="#ffffff" stop-opacity=".06"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blurCloud" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <rect width="1200" height="630" fill="url(#sunGlow)"/>
+
+  <!-- Nuages d'arrière-plan -->
+  <g filter="url(#blurCloud)" opacity=".48">
+    <ellipse cx="250" cy="170" rx="230" ry="75" fill="#cfe6f5" opacity=".22"/>
+    <ellipse cx="420" cy="118" rx="165" ry="58" fill="#e6f4ff" opacity=".16"/>
+    <ellipse cx="970" cy="530" rx="260" ry="80" fill="#d7ebf7" opacity=".17"/>
+    <ellipse cx="180" cy="560" rx="230" ry="70" fill="#c5dfef" opacity=".12"/>
+  </g>
+
+  <!-- Voile de profondeur -->
+  <rect x="0" y="430" width="1200" height="200" fill="#020b14" opacity=".2"/>
+
+  <!-- Marque -->
+  <g transform="translate(80 58)">
+    <svg width="50" height="50" viewBox="0 0 40 40" fill="none">
+      <circle cx="24.5" cy="15" r="7.4" fill="url(#brandSun)"/>
+      <g stroke="#FFDA8E" stroke-width="1.7" stroke-linecap="round">
+        <path d="M24.5 2.2v3.1M34.8 5.5l-2.2 2.2M37.3 15h-3.1M11.5 15H8.3M33.5 22.9l-2.2-2.1M15.5 7.9l-2.2-2.1"/>
+      </g>
+      <path d="M9.5 29.5h16.3a6.2 6.2 0 0 0 .6-12.4 9.7 9.7 0 0 0-18.2-2.4 7.2 7.2 0 0 0 1.3 14.8Z" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.94)" stroke-width="1.8" stroke-linejoin="round"/>
+    </svg>
+    <text x="65" y="33" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#ffffff" letter-spacing="-.4">Bellamy</text>
+    <text x="175" y="33" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#cfe0ee" letter-spacing="-.4">Météo</text>
+  </g>
+
+  <!-- Accroche -->
+  <g>
+    <text x="80" y="218" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="14" font-weight="600" letter-spacing="3.4" fill="#b9d3e5">MÉTÉO EN DIRECT</text>
+    <text x="78" y="330" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="82" font-weight="600" letter-spacing="-3.8" fill="#ffffff">La météo,</text>
+    <text x="78" y="416" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="82" font-weight="300" letter-spacing="-3.8" fill="#e8f4ff">en douceur.</text>
+    <text x="82" y="482" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#bfd7e8">Conditions actuelles, 24 prochaines heures</text>
+    <text x="82" y="513" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#bfd7e8">et prévisions à 7 jours.</text>
+    <g transform="translate(82 558)">
+      <rect width="180" height="34" rx="17" fill="#ffffff" fill-opacity=".1" stroke="#ffffff" stroke-opacity=".2"/>
+      <circle cx="19" cy="17" r="3" fill="#ffd27a"/>
+      <text x="32" y="22.5" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="12.5" font-weight="600" letter-spacing="1.1" fill="#dcecf8">PARIS · TOKYO · AILLEURS</text>
+    </g>
+  </g>
+
+  <!-- Panneau météo -->
+  <g>
+    <rect x="688" y="138" width="432" height="354" rx="36" fill="url(#card)" stroke="#ffffff" stroke-opacity=".22"/>
+    <rect x="688.5" y="138.5" width="431" height="353" rx="35.5" fill="none" stroke="#ffffff" stroke-opacity=".09"/>
+
+    <circle cx="1059" cy="142" r="145" fill="url(#sunGlow)" opacity=".7"/>
+
+    <!-- Soleil -->
+    <circle cx="1058" cy="146" r="52" fill="url(#sun)"/>
+
+    <!-- Nuage -->
+    <g opacity=".95" filter="url(#soft)">
+      <ellipse cx="936" cy="330" rx="120" ry="43" fill="#ffffff" opacity=".24"/>
+      <ellipse cx="1022" cy="302" rx="80" ry="37" fill="#ffffff" opacity=".2"/>
+    </g>
+
+    <text x="732" y="204" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.8" fill="#d3e5f2">PARIS, FRANCE</text>
+
+    <text x="728" y="366" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="154" font-weight="200" letter-spacing="-11" fill="#ffffff">18</text>
+    <text x="878" y="296" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="54" font-weight="300" fill="#f2f9ff" opacity=".9">°</text>
+
+    <text x="734" y="414" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="21" font-weight="500" fill="#edf6ff">Partiellement nuageux</text>
+    <text x="734" y="441" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#bcd4e4">Ressenti 17° · Vent 12 km/h</text>
+
+    <!-- Mini cartes -->
+    <g transform="translate(732 462)">
+      <rect width="112" height="32" rx="11" fill="#ffffff" fill-opacity=".09" stroke="#ffffff" stroke-opacity=".14"/>
+      <text x="14" y="21" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#dceaf5">Humidité 64 %</text>
+    </g>
+    <g transform="translate(854 462)">
+      <rect width="106" height="32" rx="11" fill="#ffffff" fill-opacity=".09" stroke="#ffffff" stroke-opacity=".14"/>
+      <text x="14" y="21" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#dceaf5">UV 3 · Modéré</text>
+    </g>
+    <g transform="translate(970 462)">
+      <rect width="104" height="32" rx="11" fill="#ffffff" fill-opacity=".09" stroke="#ffffff" stroke-opacity=".14"/>
+      <text x="14" y="21" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#dceaf5">Coucher 18:42</text>
+    </g>
+  </g>
+
+  <line x1="80" y1="598" x2="1120" y2="598" stroke="url(#line)" stroke-width="1"/>
+  <text x="80" y="620" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="12" font-weight="400" letter-spacing=".6" fill="#9fb9cb">bellamy-meteo.bellamy.stream</text>
+  <text x="1120" y="620" text-anchor="end" font-family="Avenir Next, Helvetica Neue, Helvetica, sans-serif" font-size="12" font-weight="400" letter-spacing=".6" fill="#9fb9cb">Données Open-Meteo</text>
+</svg>
